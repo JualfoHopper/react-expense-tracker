@@ -1,14 +1,13 @@
-import React from "react";
 import { VictoryPie, VictoryLabel } from "victory";
 import { useGlobalState } from "../context/GlobalState";
 type Props = {};
 
 function ExpenseChart({}: Props) {
   const { transactions }: any = useGlobalState();
-  const total = transactions.reduce(
-    (acc: any, transaction: any) => (acc += transaction.amount),
-    0
-  );
+  // const total = transactions.reduce(
+  //   (acc: any, transaction: any) => (acc += transaction.amount),
+  //   0
+  // );
   const totalIncome = transactions
     .filter((transaction: any) => transaction.amount > 0)
     .reduce((acc: any, transaction: any) => (acc += transaction.amount), 0);
